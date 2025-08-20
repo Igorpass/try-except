@@ -1,0 +1,20 @@
+import math
+
+lista = [5, 3, -2, "a", 7]  # exemplo de lista
+
+for item in lista:
+    try:
+
+        if not isinstance(item, int):
+            raise ValueError(f"O elemento '{item}' não é um número inteiro!")
+
+
+        if item < 0:
+            raise ValueError(f"O número {item} é negativo!")
+
+         {item} = {math.factorial(item)}")
+
+    except ValueError as erro:
+        print("Erro:", erro)
+    except Exception as erro:
+        print("Erro inesperado:", erro)
