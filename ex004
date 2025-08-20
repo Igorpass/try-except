@@ -1,0 +1,24 @@
+import os
+
+arquivo = "meu_arquivo.txt"  # nome do arquivo
+
+try:
+    
+    if not os.path.exists(arquivo):
+        raise FileNotFoundError(f"O arquivo '{arquivo}' não foi encontrado no diretório!")
+
+    with open(arquivo, "r", encoding="utf-8") as f:
+        linhas = f.readlines()
+
+  
+    num_linhas = len(linhas)
+
+ 
+    num_palavras = sum(len(linha.split()) for linha in linhas)
+
+    print(f"O arquivo possui {num_linhas} linhas e {num_palavras} palavras.")
+
+except FileNotFoundError as erro:
+    print("Erro:", erro)
+except Exception as erro:
+    print("Erro inesperado:", erro)
