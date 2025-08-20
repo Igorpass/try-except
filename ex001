@@ -1,0 +1,13 @@
+try:
+    nome = input("Digite seu nome: ")
+
+    # Verifica se é string válida (apenas letras e espaços)
+    if nome.replace(" ", "").isalpha():
+        print("Nome válido:", nome)
+    else:
+        raise ValueError("O nome deve conter apenas letras.")
+        
+except ValueError as erro:
+    print("Erro:", erro)
+except Exception:
+    print("Ocorreu um erro inesperado!")
