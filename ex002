@@ -1,0 +1,13 @@
+try:
+    n1 = int(input("Digite o primeiro número inteiro: "))
+    n2 = int(input("Digite o segundo número inteiro: "))
+
+    resultado = n1 / n2
+    print("Resultado da divisão:", resultado)
+
+except ZeroDivisionError:
+    print("Erro: não é possível dividir por zero!")
+except ValueError:
+    print("Erro: você digitou algo que não é número inteiro!")
+except Exception as erro:
+    print("Ocorreu um erro inesperado:", erro)
