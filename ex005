@@ -1,0 +1,32 @@
+import os
+
+arquivo = "nomes.txt"  # nome do arquivo onde será salvo
+
+try:
+    
+
+    nome = input("Digite seu nome completo: ").strip()
+
+   
+    if not nome.replace(" ", "").isalpha():
+        raise ValueError("Nome inválido! Digite apenas letras e espaços.")
+
+     
+    nome_formatado = nome.title()
+
+    
+    if not os.path.exists(arquivo):
+        raise FileNotFoundError(f"O arquivo '{arquivo}' não foi encontrado no diretório!")
+
+    
+    with open(arquivo, "a", encoding="utf-8") as f:
+        f.write(nome_formatado + "\n")
+
+    print(f"Nome '{nome_formatado}' salvo no arquivo '{arquivo}' com sucesso!")
+
+except ValueError as erro:
+    print("Erro:", erro)
+except FileNotFoundError as erro:
+    print("Erro:", erro)
+except Exception as erro:
+    print("Erro inesperado:", erro)
